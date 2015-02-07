@@ -19120,3 +19120,690 @@ Processing by PostsController#show as HTML
   [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
   Rendered posts/show.html.erb within layouts/application (9.0ms)
 Completed 200 OK in 276ms (Views: 274.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/4/comments" for ::1 at 2015-02-07 15:16:52 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CommentsController#index as HTML
+  Parameters: {"post_id"=>"4"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered comments/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 367ms (Views: 298.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/posts/4/comments/destroy_all" for ::1 at 2015-02-07 15:17:26 -0800
+Processing by CommentsController#destroy_all as HTML
+  Parameters: {"authenticity_token"=>"wzGyPS31d5uwl8LI55BX0/5X+fev+dS68gfc8U4FxOsVlDxL5HquySDD4fEx6TLR3kk5NGzAezUohsEgRMF0yQ==", "post_id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 7]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "comments" WHERE "comments"."id" = ?  [["id", 13]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/4" for ::1 at 2015-02-07 15:17:26 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE "images"."post_id" = ?  [["post_id", 4]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered posts/show.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 220ms (Views: 215.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/images-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/comments-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/posts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/application-1522c03fd4f3d682dab1384bc06ae50b.css?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/scaffolds-84ebd26a34e886fb7ce010f887b846e5.css?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/images-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/assets/application-e0915e1eb4c59ce700a2ef8fe932c748.js?body=1" for ::1 at 2015-02-07 15:17:27 -0800
+
+
+Started GET "/posts/4" for ::1 at 2015-02-07 15:17:48 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."post_id" = ?  [["post_id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  Rendered posts/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 209ms (Views: 207.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-02-07 15:22:48 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 554ms (Views: 547.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/images-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/posts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/comments-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/scaffolds-84ebd26a34e886fb7ce010f887b846e5.css?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/application-1522c03fd4f3d682dab1384bc06ae50b.css?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/images-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/application-e0915e1eb4c59ce700a2ef8fe932c748.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/images-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/assets/application-e0915e1eb4c59ce700a2ef8fe932c748.js?body=1" for ::1 at 2015-02-07 15:22:49 -0800
+
+
+Started GET "/posts" for ::1 at 2015-02-07 15:22:50 -0800
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.7ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 256ms (Views: 253.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-02-07 15:22:53 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."post_id" = ?  [["post_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered posts/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 324ms (Views: 322.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/5/images/new" for ::1 at 2015-02-07 15:22:55 -0800
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered images/new.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 289ms (Views: 277.1ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/posts/5/images" for ::1 at 2015-02-07 15:22:56 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePJTzaMw9M00GTJ2dEUJhVz1vY4WGij8KQfogG4qOwCuV927ar8tn6RNEU+iPGyHfOt9TdUjh3PzhvVRZO6LIg==", "commit"=>"Create Image", "post_id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 400 Bad Request in 4ms
+
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  app/controllers/images_controller.rb:33:in `image_params'
+  app/controllers/images_controller.rb:18:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (46.3ms)
+
+
+Started POST "/posts/5/images" for ::1 at 2015-02-07 15:23:10 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePJTzaMw9M00GTJ2dEUJhVz1vY4WGij8KQfogG4qOwCuV927ar8tn6RNEU+iPGyHfOt9TdUjh3PzhvVRZO6LIg==", "commit"=>"Create Image", "post_id"=>"5"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+Completed 400 Bad Request in 3ms
+
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  app/controllers/images_controller.rb:33:in `image_params'
+  app/controllers/images_controller.rb:18:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (10.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (50.3ms)
+
+
+Started POST "/posts/5/images" for ::1 at 2015-02-07 15:23:13 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ePJTzaMw9M00GTJ2dEUJhVz1vY4WGij8KQfogG4qOwCuV927ar8tn6RNEU+iPGyHfOt9TdUjh3PzhvVRZO6LIg==", "commit"=>"Create Image", "post_id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 400 Bad Request in 3ms
+
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  app/controllers/images_controller.rb:33:in `image_params'
+  app/controllers/images_controller.rb:18:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (21.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (52.0ms)
+
+
+Started GET "/posts/5/images/new" for ::1 at 2015-02-07 15:23:19 -0800
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"5"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered images/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 289ms (Views: 286.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/application-e0915e1eb4c59ce700a2ef8fe932c748.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/images-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:23:19 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:23:20 -0800
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:20 -0800
+
+
+Started GET "/assets/images-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:20 -0800
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:20 -0800
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:20 -0800
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:20 -0800
+
+
+Started GET "/assets/application-e0915e1eb4c59ce700a2ef8fe932c748.js?body=1" for ::1 at 2015-02-07 15:23:20 -0800
+
+
+Started POST "/posts/5/images" for ::1 at 2015-02-07 15:23:28 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5g17E1Ik3arcukL8i370plafg0EcyTXFRpswhZGXUmYwqPVlm6sE+EzuYcVdB5GkdoFDgt/wmkqcGi1Um1PiRA==", "image"=>{"attachment"=>#<ActionDispatch::Http::UploadedFile:0x007fd9e885a768 @tempfile=#<Tempfile:/var/folders/83/98g8707d0f364z7m1pm76vlh0000gr/T/RackMultipart20150207-41921-1v15n86.jpg>, @original_filename="title.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[attachment]\"; filename=\"title.jpg\"\r\nContent-Type: image/jpeg\r\n">, "remote_attachment_url"=>""}, "commit"=>"Create Image", "post_id"=>"5"}
+  [1m[36mPost Load (1.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+Unpermitted parameter: remote_attachment_url
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "images" ("attachment", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["attachment", "title.jpg"], ["post_id", 5], ["created_at", "2015-02-07 23:23:28.592193"], ["updated_at", "2015-02-07 23:23:28.592193"]]
+  [1m[35m (9.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/images/10
+Completed 302 Found in 1509ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/images/10" for ::1 at 2015-02-07 15:23:29 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered images/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 293ms (Views: 289.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:23:30 -0800
+
+
+Started GET "/assets/application-e0915e1eb4c59ce700a2ef8fe932c748.js?body=1" for ::1 at 2015-02-07 15:23:30 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:23:30 -0800
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:30 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:23:30 -0800
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-07 15:23:30 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:23:30 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:23:30 -0800
+
+
+Started DELETE "/posts/10" for ::1 at 2015-02-07 15:23:33 -0800
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GZA3wgF9W30X+y6Xe9YFBIMcYqU6PxaerxsircKcQSXPNbm0yPKCL4evDa6tr2AGowKiZvkGuRF1mj98yFjxBw==", "id"=>"10"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 10]]
+Completed 404 Not Found in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=10):
+  app/controllers/posts_controller.rb:71:in `set_post'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (40.1ms)
+
+
+Started GET "/images/10" for ::1 at 2015-02-07 15:24:46 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered images/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 164ms (Views: 162.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:24:46 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:24:46 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:24:46 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:24:46 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:24:46 -0800
+
+
+Started GET "/posts/5" for ::1 at 2015-02-07 15:24:50 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."post_id" = ?  [["post_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  Rendered posts/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 136ms (Views: 134.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/images/10" for ::1 at 2015-02-07 15:24:51 -0800
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qKhE9II1NGDy/dA3aLyS+ffNVdYEDuU3te9XHyaNtEt+DcqCS7rtMmKp8w6+xff719OVFcc3SrhvbkrOLEkEaQ==", "id"=>"10"}
+  [1m[35mImage Load (0.2ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 10]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.9ms)[0m  [1mDELETE FROM "images" WHERE "images"."id" = ?[0m  [["id", 10]]
+  [1m[35m (9.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 1441ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/posts/5" for ::1 at 2015-02-07 15:24:52 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 5]]
+  Rendered posts/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 228ms (Views: 226.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:24:53 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:24:53 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:24:53 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:24:53 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:24:53 -0800
+
+
+Started GET "/posts/5/images/new" for ::1 at 2015-02-07 15:24:54 -0800
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered images/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 212ms (Views: 210.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts/5/images" for ::1 at 2015-02-07 15:25:09 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1nY76lTY0MWUoAGYWwEBzhQ3sG6/0Ghe3WtMKBr5tMMA07WcnVcJlwT0IqGNeGTMNClwrXzpx9EH6lH5ED0E4Q==", "image"=>{"attachment"=>#<ActionDispatch::Http::UploadedFile:0x007fd9e96b36e8 @tempfile=#<Tempfile:/var/folders/83/98g8707d0f364z7m1pm76vlh0000gr/T/RackMultipart20150207-41921-fq124q.jpg>, @original_filename="udemyMarketing.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[attachment]\"; filename=\"udemyMarketing.jpg\"\r\nContent-Type: image/jpeg\r\n">, "remote_attachment_url"=>""}, "commit"=>"Create Image", "post_id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+Unpermitted parameter: remote_attachment_url
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "images" ("attachment", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["attachment", "udemyMarketing.jpg"], ["post_id", 5], ["created_at", "2015-02-07 23:25:10.077826"], ["updated_at", "2015-02-07 23:25:10.077826"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/images/11
+Completed 302 Found in 2381ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/images/11" for ::1 at 2015-02-07 15:25:12 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mImage Load (0.1ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered images/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 113ms (Views: 111.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:25:12 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:25:12 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:25:12 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:25:12 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:25:12 -0800
+
+
+Started GET "/posts/5/images/new" for ::1 at 2015-02-07 15:26:19 -0800
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered images/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 221ms (Views: 220.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:26:19 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:26:19 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:26:19 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:26:19 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:26:19 -0800
+
+
+Started POST "/posts/5/images" for ::1 at 2015-02-07 15:26:22 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ah/8uHv7cXM/2b4pGdcMCarunJFaEfo3GlAXk2q/jM+8unLOsnSoIa+NnRDPrmkLivBcUpkoVbjA0QpCYHs87Q==", "image"=>{"attachment"=>#<ActionDispatch::Http::UploadedFile:0x007fd9e8dd87f8 @tempfile=#<Tempfile:/var/folders/83/98g8707d0f364z7m1pm76vlh0000gr/T/RackMultipart20150207-41921-lxncgs.jpg>, @original_filename="udemyMarketing.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[attachment]\"; filename=\"udemyMarketing.jpg\"\r\nContent-Type: image/jpeg\r\n">, "remote_attachment_url"=>""}, "commit"=>"Create Image", "post_id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+Unpermitted parameter: remote_attachment_url
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "images" ("attachment", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["attachment", "udemyMarketing.jpg"], ["post_id", 5], ["created_at", "2015-02-07 23:26:22.151072"], ["updated_at", "2015-02-07 23:26:22.151072"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/images/12
+Completed 302 Found in 1995ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/images/12" for ::1 at 2015-02-07 15:26:24 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered images/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 191ms (Views: 188.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:26:24 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:26:24 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:26:24 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:26:24 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:26:24 -0800
+
+
+Started DELETE "/posts/5" for ::1 at 2015-02-07 15:26:25 -0800
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RjW5aJtedrS9IlemXH/fAI8TYEgyAfjwZ3ZL7kduA7GQkDceUtGv5i12dJ+KBroCrw2gi/E4V3+991Y/Taqzkw==", "id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE "images"."post_id" = ?  [["post_id", 5]]
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "images" WHERE "images"."id" = ?[0m  [["id", 11]]
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "images" WHERE "images"."id" = ?  [["id", 12]]
+  [1m[36mSQL (8.3ms)[0m  [1mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 2225ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/posts" for ::1 at 2015-02-07 15:26:27 -0800
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered posts/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 183ms (Views: 182.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:26:28 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:26:28 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:26:28 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:26:28 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:26:28 -0800
+
+
+Started GET "/posts/3" for ::1 at 2015-02-07 15:27:18 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."post_id" = ?  [["post_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered posts/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 179ms (Views: 177.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/3/images/new" for ::1 at 2015-02-07 15:27:19 -0800
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"3"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered images/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 161ms (Views: 158.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/posts/3/images" for ::1 at 2015-02-07 15:27:27 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yy6VG277GSaum9Bkl7YGMA2/tm+f3ywdn8GcQeTE9YG1ixttp3TAdD7P811Bz2MyLaF2rFzmg5JFQIGQ7gBFow==", "image"=>{"attachment"=>#<ActionDispatch::Http::UploadedFile:0x007fd9e925da80 @tempfile=#<Tempfile:/var/folders/83/98g8707d0f364z7m1pm76vlh0000gr/T/RackMultipart20150207-41921-sxeb9n.jpg>, @original_filename="title.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[attachment]\"; filename=\"title.jpg\"\r\nContent-Type: image/jpeg\r\n">, "remote_attachment_url"=>""}, "commit"=>"Create Image", "post_id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 3]]
+Unpermitted parameter: remote_attachment_url
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "images" ("attachment", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["attachment", "title.jpg"], ["post_id", 3], ["created_at", "2015-02-07 23:27:28.033655"], ["updated_at", "2015-02-07 23:27:28.033655"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/images/13
+Completed 302 Found in 1725ms (ActiveRecord: 9.8ms)
+
+
+Started GET "/images/13" for ::1 at 2015-02-07 15:27:29 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered images/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 172ms (Views: 170.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:27:29 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:27:29 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:27:29 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:27:29 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:27:29 -0800
+
+
+Started DELETE "/images/13" for ::1 at 2015-02-07 15:27:31 -0800
+Processing by ImagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IyGZYKdhKIwcna6pbInln8SVOWJyEuThkWT3d7SzV7r1hBcWbu7x3ozJjZC68ICd5Iv5obErS25L5eqmvnfnmA==", "id"=>"13"}
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "images" WHERE "images"."id" = ?  [["id", 13]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 951ms (ActiveRecord: 9.7ms)
+
+
+Started GET "/posts/3" for ::1 at 2015-02-07 15:27:32 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."post_id" = ?  [["post_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  Rendered posts/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 197ms (Views: 195.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-07 15:27:32 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:27:32 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:27:32 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-07 15:27:32 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-07 15:27:32 -0800
