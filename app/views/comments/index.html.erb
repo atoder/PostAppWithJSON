@@ -25,4 +25,6 @@
 <br>
 
 <%= link_to 'New Comment', new_post_comment_path %> |
-<%= link_to( "Delete all comments", destroy_all_post_comments_path(post_id: @post.id), method: :delete) %> |
+<%= link_to("Delete all comments", destroy_all_post_comments_path(post_id: @post.id), method: :delete) %> |
+
+<%= link_to 'Back', post_path(@post) %>

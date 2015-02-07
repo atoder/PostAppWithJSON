@@ -25,8 +25,9 @@ class ImagesController < ApplicationController
 
   def destroy
     @image = Image.find(params[:id])
+    @post = @image.post
     @image.destroy
-    redirect_to image_path, notice:  "The image has been deleted."
+    redirect_to post_path(@post), notice:  "The image has been deleted."
   end
   def image_params
     params.require(:image).permit(:attachment)

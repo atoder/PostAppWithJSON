@@ -6,6 +6,12 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+if File.exists?(File.expand_path('../application.yml', __FILE__))
+  ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__))) 
+end
+
+
 module PostApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

@@ -16,6 +16,27 @@
 </p>
 
 <p>
+  <strong>Image:</strong> <br/>
+   <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Picture</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @post.images.each do |picture| %>
+        <tr>
+          <td><%= link_to image_tag(picture.attachment_url(:thumb)), picture.attachment_url %></td>
+          <td><%= button_to "Delete", image_path(id: picture.id), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete?" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+
+
+<p>
   <%= link_to "Add Picture", new_post_image_path(@post), class: "btn btn-info" %>
 </p>
 
