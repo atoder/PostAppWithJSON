@@ -27,3 +27,8 @@ Please create a fresh rails app, and JSON API endpoints for the following cases.
 - list comments for a post
 - create a comment
 - delete a comment / comment thread you've created.
+
+
+### As a web app
+- Step 1 - Create a user
+- Step 2 - Create a post. Post can have many comments and many images 
