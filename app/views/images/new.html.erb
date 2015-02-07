@@ -1,2 +1,13 @@
-<h1>Images#new</h1>
-<p>Find me in app/views/images/new.html.erb</p>
+<h1>Add New Image</h1>
+
+<%= form_for [@post, @image],  :html => {:multipart => true} do |f| %>
+  <p>
+    <%= f.file_field :attachment %>
+  </p>
+  <p>
+    <%= f.label :remote_attachment_url, "or image URL" %><br />
+    <%= f.text_field :remote_attachment_url %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>
+

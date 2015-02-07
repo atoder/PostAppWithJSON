@@ -1,16 +1,9 @@
 Rails.application.routes.draw do
-  get 'images/index'
-
-  get 'images/new'
-
-  get 'images/create'
-
-  get 'images/destroy'
-
   resources :posts do
     resources :comments, shallow: true do
       delete :destroy_all, on: :collection
     end
+    resources :images, shallow: true
   end
 
   resources :comments, only: [:new]

@@ -1,0 +1,16 @@
+<table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Picture</th>
+        <th>&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= link_to image_tag(@image.attachment_url(:thumb)), @image.attachment_url %></td>
+          <td><%= button_to "Delete", post_path(id: @image.id), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete?" %></td>
+        </tr>
+    </tbody>
+  </table>
+
+<%= link_to 'Back', post_path(@post) %>
