@@ -29,7 +29,7 @@ Please create a fresh rails app, and JSON API endpoints for the following cases.
 - delete a comment / comment thread you've created.
 
 
-## ANSWER 
+## SOLUTION 
 
 ### As a web interface app
 - Step 1 - Create a user
