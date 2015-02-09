@@ -5,12 +5,22 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+
     get_all_users
+    respond_to do |format|
+        format.html {}
+        format.json  {
+        }
+     end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    respond_to do |format|
+      format.html { }
+      format.json { }
+    end
   end
 
   # GET /posts/new

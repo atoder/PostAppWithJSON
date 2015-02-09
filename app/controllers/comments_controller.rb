@@ -6,6 +6,10 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = @post.comments
+    respond_to do |format| 
+      format.html {}
+      format.json { render json: @comments }
+    end
   end
 
   # GET /comments/1
