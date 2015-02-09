@@ -35115,3 +35115,260 @@ Processing by ImagesController#destroy as */*
   [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
 Redirected to http://localhost:3000/posts/8
 Completed 302 Found in 1059ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2015-02-08 22:53:40 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 1926ms (Views: 1906.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds-84ebd26a34e886fb7ce010f887b846e5.css?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/images-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/posts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/custom-d7b7181243d1b5b0776215625e32dc74.css?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/comments-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/application-a0d00fdf83e020f7ec5c9c98067f2c41.css?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/images-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/assets/application-e0915e1eb4c59ce700a2ef8fe932c748.js?body=1" for ::1 at 2015-02-08 22:53:42 -0800
+
+
+Started GET "/posts" for ::1 at 2015-02-08 22:53:45 -0800
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (3.6ms)[0m  SELECT "posts".* FROM "posts"
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered posts/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 707ms (Views: 695.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/2" for ::1 at 2015-02-08 22:53:47 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mImage Load (0.7ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."post_id" = ?[0m  [["post_id", 2]]
+  [1m[35m (1.5ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?  [["post_id", 2]]
+  Rendered posts/show.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 901ms (Views: 895.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/2/images/new" for ::1 at 2015-02-08 22:53:49 -0800
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered images/new.html.erb within layouts/application (119.1ms)
+Completed 200 OK in 1055ms (Views: 1052.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts/2/images" for ::1 at 2015-02-08 22:54:04 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bJwthXbbajXWoJeUrtlcWMindzH+aqhWXIgCzBJqXbm6OaPzv1SzZ0b0tK14oDla6Lm38j1TB9mGCR8dGK7tmw==", "image"=>{"attachment"=>#<ActionDispatch::Http::UploadedFile:0x007fdef1ea3c60 @tempfile=#<Tempfile:/var/folders/83/98g8707d0f364z7m1pm76vlh0000gr/T/RackMultipart20150208-54940-1pz3jev.jpg>, @original_filename="title.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[attachment]\"; filename=\"title.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Image", "post_id"=>"2"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "images" ("attachment", "post_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["attachment", "title.jpg"], ["post_id", 2], ["created_at", "2015-02-09 06:54:04.349072"], ["updated_at", "2015-02-09 06:54:04.349072"]]
+  [1m[36m (9.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/images/21
+Completed 302 Found in 2924ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/images/21" for ::1 at 2015-02-08 22:54:06 -0800
+Processing by ImagesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mImage Load (0.3ms)[0m  SELECT  "images".* FROM "images" WHERE "images"."id" = ? LIMIT 1  [["id", 21]]
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered images/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 708ms (Views: 703.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-08 22:54:07 -0800
+
+
+Started GET "/posts/2" for ::1 at 2015-02-08 22:54:09 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE "images"."post_id" = ?  [["post_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  Rendered posts/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 565ms (Views: 561.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/2/images/new" for ::1 at 2015-02-08 22:54:11 -0800
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"2"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered images/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 705ms (Views: 703.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts/2/images" for ::1 at 2015-02-08 22:54:13 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gVircTRX4zUtYLG3wr5oxfOhQ7qXIJ75buNiG53TlYpX/SUH/dg6Z700ko4Uxw3H07+DeVQZMXa0Yn/KlxclqA==", "commit"=>"Create Image", "post_id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 400 Bad Request in 5ms
+
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  app/controllers/images_controller.rb:44:in `image_params'
+  app/controllers/images_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (22.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (13.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (107.5ms)
+
+
+Started GET "/posts/2/images/new" for ::1 at 2015-02-08 22:54:25 -0800
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"2"}
+  [1m[35mPost Load (2.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered images/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 637ms (Views: 539.2ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-08 22:54:26 -0800
+
+
+Started POST "/posts/2/images" for ::1 at 2015-02-08 22:54:27 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"34Al8rgVDGSM1M+pvZJ6ljYDH2NV0IA2A8gDJP+Z9pMJJauEcZrVNhyA7JBr6x+UFh3foJbpL7nZSR719V1GsQ==", "commit"=>"Create Image", "post_id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 400 Bad Request in 8ms
+
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  app/controllers/images_controller.rb:44:in `image_params'
+  app/controllers/images_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (58.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (10.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (7.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (149.6ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-08 22:54:36 -0800
+
+
+Started GET "/posts/2/images/new" for ::1 at 2015-02-08 22:55:26 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ImagesController#new as HTML
+  Parameters: {"post_id"=>"2"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered images/new.html.erb within layouts/application (270.3ms)
+Completed 200 OK in 1500ms (Views: 1304.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/custom-d7b7181243d1b5b0776215625e32dc74.css?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/posts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/images-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/scaffolds-84ebd26a34e886fb7ce010f887b846e5.css?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/users-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/comments-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/welcome-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/application-a0d00fdf83e020f7ec5c9c98067f2c41.css?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/comments-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/images-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/posts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/welcome-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started GET "/assets/application-e0915e1eb4c59ce700a2ef8fe932c748.js?body=1" for ::1 at 2015-02-08 22:55:29 -0800
+
+
+Started POST "/posts/2/images" for ::1 at 2015-02-08 22:55:30 -0800
+Processing by ImagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xvsZYt66xsdCvnQ5iFvbfuGKyOavVllcHqy1wiESORUQXpcUFzUfldLqVwBeIr58wZQIJWxv9tPELagTK9aJNw==", "commit"=>"Create Image", "post_id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 400 Bad Request in 37ms
+
+ActionController::ParameterMissing (param is missing or the value is empty: image):
+  app/controllers/images_controller.rb:44:in `image_params'
+  app/controllers/images_controller.rb:20:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (30.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (10.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (137.5ms)

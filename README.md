@@ -101,3 +101,6 @@ curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuap
 # delete threads
 curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuapp.com/posts/2/comments/destroy_all
 
+
+### Demonstration video
+https://www.youtube.com/watch?v=hxEh0y3sP_Q
