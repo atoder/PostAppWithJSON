@@ -90,7 +90,7 @@ curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuap
 
 #### Comments
 
-- list comments for a post
+- list comments for a post  
  curl -i http://post-app-json.herokuapp.com/posts/1/comments.json
 
  - create a comment   
