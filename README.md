@@ -31,55 +31,60 @@ Please create a fresh rails app, and JSON API endpoints for the following cases.
 
 ## SOLUTION 
 
+### If you clone the repository, make sure to set S3 Env Variables as follows
+S3_KEY:  
+S3_SECRET:  
+S3_BUCKET:  
+
+
 ### As a web interface app
 - Step 1 - Create a user
 - Step 2 - Create a post. Post can have many comments and many images 
 
 
-
 ### JSON API END POINTS
 
 Users
-- list users
+- list users  
 curl -i http://post-app-json.herokuapp.com/users.json
 
-- create user
+- create user  
 curl -H "Content-Type: application/json" -d '{"name":"xyz","city":"xyz"}' http://post-app-json.herokuapp.com/users
 
 
-- delete user
+- delete user  
 curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuapp.com/users/1
 
 
 #### Posts
 
-- list - return most recent posts, as an array of { id, title, author_name, author_city, image } 
+- list - return most recent posts, as an array of { id, title, author_name, author_city, images }   
 curl -i http://post-app-json.herokuapp.com/posts.json
 
-- create
+- create  
 curl -H "Content-Type: application/json" -d '{"title":"xyz","content":"xyzzz", "user_id":2}' http://post-app-json.herokuapp.com/posts
 
-- view an individual post
+- view an individual post   
 curl -i http://post-app-json.herokuapp.com/posts/1.json
 
 
-- update post
+- update post  
 curl -H "Content-Type: application/json" -X PUT -d '{"title":"xyz","content":"xyzzz"}' http://post-app-json.herokuapp.com/posts/2
 
 
-- delete a post
+- delete a post  
 curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuapp.com/posts/1
 
 
 
 #### Images
 
-- add image to a post
+- add image to a post  
 curl -i -F "image[attachment]=@title.jpg" http://post-app-json.herokuapp.com/posts/8/images
 
 
 
-- delete image
+- delete image   
 curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuapp.com/images/20
 
 
@@ -88,17 +93,17 @@ curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuap
 - list comments for a post
  curl -i http://post-app-json.herokuapp.com/posts/1/comments.json
 
- - create a comment
+ - create a comment   
  curl -X POST -H "Content-Type: application/json" -d '{"comment":{"comment":"test"}}' http://post-app-json.herokuapp.com/posts/8/comments
 
 
- - delete a comment / comment thread you've created.
+### delete a comment / comment thread you've created.  
 
-# delete comment
+- delete comment  
 curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuapp.com/comments/1
 
 
-# delete threads
+- delete threads  
 curl -H "Content-Type: application/json" -X DELETE http://post-app-json.herokuapp.com/posts/2/comments/destroy_all
 
 
